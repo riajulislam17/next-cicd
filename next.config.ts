@@ -4,7 +4,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  output: 'export',
+  // output: 'export',
   // output: 'export',
   // assetPrefix: isProd ? '/next-cicd/' : '',
 };
