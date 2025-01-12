@@ -38,44 +38,46 @@ const PostForm = ({ initialPost }: PostFormProps) => {
 
   return (
     <>
-      <div className="mb-5">
-        <label className="block text-sm font-medium mb-1">Title</label>
-        <input
-          type="text"
-          name="title"
-          value={post.title}
-          onChange={handleChange}
-          className="w-full border border-gray-300 px-4 py-2 rounded"
-          required
-        />
-      </div>
-      <div className="mb-5">
-        <label className="block text-sm font-medium mb-1">Body</label>
-        <textarea
-          name="body"
-          value={post.body}
-          onChange={handleChange}
-          className="w-full border border-gray-300 px-4 py-2 rounded"
-          rows={5}
-          required
-        />
-      </div>
-      <div className="flex justify-end items-center gap-4">
-        <button
-          type="submit"
-          className="bg-cyan-600 text-white px-6 py-2 rounded font-semibold"
-          onClick={handleSubmit}
-        >
-          {isEditMode ? "Update Post" : "Create Post"}
-        </button>
+      <div className="p-8">
+        <div className="mb-5">
+          <label className="block text-sm font-medium mb-1">Title</label>
+          <input
+            type="text"
+            name="title"
+            value={post.title}
+            onChange={handleChange}
+            className="w-full border border-gray-300 px-4 py-2 rounded"
+            required
+          />
+        </div>
+        <div className="mb-5">
+          <label className="block text-sm font-medium mb-1">Body</label>
+          <textarea
+            name="body"
+            value={post.body}
+            onChange={handleChange}
+            className="w-full border border-gray-300 px-4 py-2 rounded"
+            rows={5}
+            required
+          />
+        </div>
+        <div className="flex justify-end items-center gap-4">
+          <button
+            type="submit"
+            className="bg-cyan-600 text-white px-6 py-2 rounded font-semibold"
+            onClick={handleSubmit}
+          >
+            {isEditMode ? "Update Post" : "Create Post"}
+          </button>
 
-        <button
-          type="submit"
-          className="border border-red-500 text-red-500 px-6 py-2 rounded font-semibold"
-          onClick={() => router.push("/post")}
-        >
-          Cancel
-        </button>
+          <button
+            type="submit"
+            className="border border-red-500 text-red-500 px-6 py-2 rounded font-semibold"
+            onClick={() => router.push("/post")}
+          >
+            Cancel
+          </button>
+        </div>
       </div>
     </>
   );

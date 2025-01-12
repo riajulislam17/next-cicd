@@ -5,7 +5,8 @@ import React from "react";
 
 export default function index({
   posts,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+}: InferGetServerSidePropsType<typeof getStaticProps>) {
+  // InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <>
       <PostList posts={posts} />
@@ -13,7 +14,8 @@ export default function index({
   );
 }
 
-export const getServerSideProps = (async () => {
+// export const getServerSideProps = (async () => {
+export const getStaticProps = (async () => {
   const res = await getPostList();
   const posts: Post[] = await res;
   return { props: { posts } };
