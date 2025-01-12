@@ -5,4 +5,10 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
 };
 
+module.exports = {
+  output: 'export',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/your-repo-name/' : '',
+};
+
+
 export default nextConfig;
